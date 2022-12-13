@@ -2,12 +2,20 @@
 
 <HTML>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <title>Biblia resumida de jlxip</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
+        <link rel="stylesheet" href="/static/style.css">
     </head>
     <body>
-        <h1>Biblia resumida de jlxip</h1>
-        <hr>
+        <div id="sitio">
+            <h1><a href="/">Biblia resumida de jlxip</a></h1>
+            <hr>
 
-        {% block contenido %}{% endblock %}
+            {% block contenido %}{% endblock %}
+        </div>
     </body>
 </HTML>

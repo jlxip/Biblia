@@ -1,9 +1,9 @@
 {% extends './base.html' %}
 
 {% block contenido %}
-<h2>{{ libro }}</h2>
+<h2><a href="/libros/{{ libro }}">{{ libro }}</a></h2>
 <hr>
-<h3>Capítulo {{ cap }}</h3>
+<h3><a href="/libros/{{ libro }}/{{ cap }}.html">Capítulo {{ cap }}</a></h3>
 <hr>
 
 <ol>

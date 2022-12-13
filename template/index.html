@@ -3,7 +3,11 @@
 {% block contenido %}
 <ol>
     {% for i in libros %}
-    <li><a href="libros/{{ i }}/index.html">{{ i }}</a></li>
+    <li><a href="libros/{{ i }}">{{ i }}</a></li>
     {% endfor %}
 </ol>
+
+<hr>
+
+{{ readme|safe }}
 {% endblock %}

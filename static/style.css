@@ -1,0 +1,12 @@
+body * {
+    font-family: monospace;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+div#sitio {
+    margin: auto;
+    width: 640px;
+}

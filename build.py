@@ -24,6 +24,7 @@ cap_t = env.get_template('cap.html')
 os.mkdir('dist')
 os.mkdir('dist/libros')
 
+# Construir cada libro
 libros = os.listdir('libros')
 libros = sorted(libros)
 for i in libros:
@@ -37,6 +38,7 @@ for i in libros:
     with open('dist/libros/%s/index.html' % libro, 'w') as f:
         f.write(libro_t.render(libro=libro, caps=rcaps))
 
+    # Cada capítulo
     for j in caps:
         cap = j.split('.txt')[0]
         with open('libros/%s/%s' % (i, j), 'r') as f:
@@ -44,6 +46,13 @@ for i in libros:
         with open('dist/libros/%s/%s.html' % (libro, cap), 'w') as f:
             f.write(cap_t.render(libro=libro, cap=cap, versos=versos))
 
+# Construir index
+with open('README.txt', 'r') as f:
+    readme = f.read().replace('\n', '<br>')
 libros = [i.split('-')[1] for i in libros]
 with open('dist/index.html', 'w') as f:
-    f.write(index_t.render(libros=libros))
+    f.write(index_t.render(libros=libros, readme=readme))
+
+# Copiar archivos estáticos
+import shutil
+shutil.copytree('static', 'dist/static')
