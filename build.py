@@ -42,9 +42,15 @@ for i in libros:
     for j in caps:
         cap = j.split('.txt')[0]
         with open('libros/%s/%s' % (i, j), 'r') as f:
-            versos = f.read().splitlines()
+            raw = f.read()
+        raw = raw.split('---\n')
+        versos = raw[0].splitlines()
+        notas = raw[1] if len(raw) > 1 else ''
+
+        # Omitir versos vacíos
+        versos = [(a+1, b) for a, b in enumerate(versos) if b]
         with open('dist/libros/%s/%s.html' % (libro, cap), 'w') as f:
-            f.write(cap_t.render(libro=libro, cap=cap, versos=versos))
+            f.write(cap_t.render(libro=libro, cap=cap, versos=versos, notas=notas))
 
 # Construir index
 with open('README.txt', 'r') as f:

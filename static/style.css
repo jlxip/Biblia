@@ -6,6 +6,10 @@ h1, h2, h3 {
     text-align: center;
 }
 
+.rojo {
+    color: red;
+}
+
 div#sitio {
     margin: 16px;
 }

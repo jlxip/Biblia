@@ -6,9 +6,10 @@
 <h3><a href="/libros/{{ libro }}/{{ cap }}.html">Capítulo {{ cap }}</a></h3>
 <hr>
 
-<ol>
-    {% for v in versos %}
-        <li>{{ v }}</li>
-    {% endfor %}
-</ol>
+{% for a, b in versos %}
+    <span class="rojo">{{ a }}.</span> {{b}}<br>
+{% endfor %}
+
+<hr>
+{{ notas }}
 {% endblock %}
