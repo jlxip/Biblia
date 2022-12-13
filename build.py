@@ -56,3 +56,7 @@ with open('dist/index.html', 'w') as f:
 # Copiar archivos estáticos
 import shutil
 shutil.copytree('static', 'dist/static')
+
+# CNAME
+with open('dist/CNAME', 'w') as f:
+    f.write('biblia.jlxip.net')
