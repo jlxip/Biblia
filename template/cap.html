@@ -1,0 +1,14 @@
+{% extends './base.html' %}
+
+{% block contenido %}
+<h2>{{ libro }}</h2>
+<hr>
+<h3>Capítulo {{ cap }}</h3>
+<hr>
+
+<ol>
+    {% for v in versos %}
+        <li>{{ v }}</li>
+    {% endfor %}
+</ol>
+{% endblock %}

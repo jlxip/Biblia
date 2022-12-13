@@ -1,0 +1,9 @@
+{% extends './base.html' %}
+
+{% block contenido %}
+<ol>
+    {% for i in libros %}
+    <li><a href="libros/{{ i }}/index.html">{{ i }}</a></li>
+    {% endfor %}
+</ol>
+{% endblock %}

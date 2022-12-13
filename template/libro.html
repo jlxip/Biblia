@@ -1,0 +1,12 @@
+{% extends './base.html' %}
+
+{% block contenido %}
+<h2>{{ libro }}</h2>
+<hr>
+
+<ul>
+    {% for c in caps %}
+        <li><a href="{{ c }}.html">Capítulo {{ c }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
