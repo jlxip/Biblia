@@ -8,5 +8,10 @@ h1, h2, h3 {
 
 div#sitio {
     margin: auto;
-    width: 640px;
+}
+
+@media all and (min-width:640px) {
+    div#sitio {
+        width: 640px !important;
+    }
 }
